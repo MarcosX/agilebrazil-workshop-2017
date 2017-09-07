@@ -9,21 +9,21 @@ class MinhasSeries
   end
 
   def adicionar_serie(status, serie)
+    lista = lista_de_series(status)
+    return if status == 'assistindo' && @series_assistindo.size >= 2
+    if !lista.include?(serie)
+      lista.push(serie)
+    end
+  end
+
+  def lista_de_series(status)
     case status
     when 'assistindo'
-      if !@series_assistindo.include?(serie)
-        if @series_assistindo.size < 2
-          @series_assistindo.push(serie)
-        end
-      end
+      @series_assistindo
     when 'assistida'
-      if !@series_assistindo.include?(serie)
-        @series_assistidas.push(serie)
-      end
+      @series_assistidas
     when 'assistir'
-      if !@series_assistir.include?(serie)
-        @series_assistir.push(serie)
-      end
+      @series_assistir
     end
   end
 end
