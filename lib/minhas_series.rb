@@ -3,9 +3,9 @@ class MinhasSeries
   attr_reader :series_assistir, :series_assistidas, :series_assistindo
 
   def initialize
-    @series_assistindo ||= []
-    @series_assistidas ||= []
-    @series_assistir ||= []
+    @series_assistindo = []
+    @series_assistidas = []
+    @series_assistir   = []
   end
 
   def adicionar_serie(status, serie)
