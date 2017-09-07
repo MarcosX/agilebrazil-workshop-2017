@@ -1,4 +1,3 @@
-require 'minitest/autorun'
 require_relative './testing_helper'
 
 class TestMinhasSeries < Minitest::Test
