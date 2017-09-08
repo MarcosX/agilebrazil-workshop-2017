@@ -1,5 +1,6 @@
 require 'date'
 require_relative './cotacao_util'
+require_relative './dinheiro'
 
 class Serie
 
@@ -15,6 +16,7 @@ class Serie
   def definir_preco(preco, moeda)
     @preco = preco
     @moeda = moeda
+    @dinheiro = Dinheiro.new(preco, moeda)
   end
 
   def preco_box(moeda)
@@ -25,11 +27,11 @@ class Serie
   end
 
   def preco
-    @preco
+    @dinheiro.valor
   end
 
   def moeda
-    @moeda
+    @dinheiro.moeda
   end
 end
 
