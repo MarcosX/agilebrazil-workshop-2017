@@ -17,8 +17,4 @@ class CotacaoUtil
     end
     raise ArgumentError.new("Não existe cotação de #{dinheiro.moeda} para #{moeda_conversao}")
   end
-
-  def self.converter(preco, moeda_base, moeda_conversao)
-    self.converter_com_dinheiro(Dinheiro.new(preco, moeda_base), moeda_conversao)
-  end
 end
