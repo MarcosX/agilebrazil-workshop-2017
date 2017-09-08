@@ -18,18 +18,10 @@ class Serie
   end
 
   def preco_box(moeda)
-    preco = CotacaoUtil.converter(self.preco, self.moeda, moeda)
+    preco = CotacaoUtil.converter(@dinheiro.valor, @dinheiro.moeda, moeda)
     preco_moeda = preco/100
     preco_centavos = preco%100
     "#{moeda} #{preco_moeda}.#{preco_centavos}"
-  end
-
-  def preco
-    @dinheiro.valor
-  end
-
-  def moeda
-    @dinheiro.moeda
   end
 end
 
