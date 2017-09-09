@@ -4,13 +4,10 @@ require_relative './dinheiro'
 
 class Serie
 
-  attr_reader :nome, :premiere, :finale, :episodios
+  attr_reader :nome
 
-  def initialize(nome, premiere: '', finale: '', episodios: 0)
+  def initialize(nome)
     @nome = nome
-    @premiere = premiere
-    @finale = finale
-    @episodios = episodios
   end
 
   def definir_preco(preco, moeda)
