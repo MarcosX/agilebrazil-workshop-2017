@@ -6,6 +6,10 @@ class CotacaoUtil
     'EUR' => {'BRL' => 373, 'USD' => 120, 'EUR' => 100}
   }
 
+  def self.cotacao
+    @@cotacao
+  end
+
   def self.moedas
     @@cotacao.keys
   end
@@ -18,3 +22,4 @@ class CotacaoUtil
     raise ArgumentError.new("Não existe cotação de #{dinheiro.moeda} para #{moeda_conversao}")
   end
 end
+
