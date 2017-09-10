@@ -1,4 +1,3 @@
-require 'date'
 require_relative './cotacao_util'
 require_relative './dinheiro'
 
