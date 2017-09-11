@@ -11,10 +11,10 @@ class CotacaoUtil
   end
 
   def self.converter(preco, moeda_base, moeda_conversao)
-    if moedas.include?(dinheiro.moeda) && moedas.include?(moeda_conversao)
+    if moedas.include?(moeda_base) && moedas.include?(moeda_conversao)
       valor_cotacao = @@cotacao[moeda_base][moeda_conversao]
-      preco = (preco * valor_cotacao)/100
+      return (preco * valor_cotacao)/100
     end
-    raise ArgumentError.new("Não existe cotação de #{dinheiro.moeda} para #{moeda_conversao}")
+    raise ArgumentError.new("Não existe cotação de #{moeda_base} para #{moeda_conversao}")
   end
 end
